@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+ <head>
+
+	<title>Camera Image HIstory - Idle Notification</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-control" content="no-cache" />
+		
+	<script src="jQuery/jquery-2.1.4.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style_index.css" />
+
+ </head>
+
+ <body>
+ 
+	<div id="title">
+	
+		<h2>Camera Image History - The page has timed out.  Click a link below to return to viewing images, or close your browser if you are done.</h2>
+		<a href="liveCameraImages.html">Return To The Camera Stream Page</a>
+		<a href="recentFailingImages.html">Return to The Recent Failed Images</a>
+	
+	</div>
+	
+
+	
+
+	
+
+	<script type="text/javascript">
+			
+		if (window.jQuery) {  
+		
+			// alert ("jQuery is loaded");
+			
+			} else {
+			
+			alert ("jQuery is NOT loaded");
+			
+		}
+		
+		
+		
+		// disable page caching for IE...
+		$.ajaxSetup({
+		
+			cache: false
+	
+		});
+	
+	</script>
+
+ </body>
+
+</html>

@@ -1,0 +1,257 @@
+		body {
+		
+			margin: 0px;
+			padding: 0px;
+			background-color: #E8E8E8;
+		
+		}
+		
+		#title div {
+			
+			float: left;
+			
+		}
+		
+		#title {
+	
+			color:white;
+			background-color:#303030;
+			
+			padding: 0px;
+			margin: 0px;
+			
+			width: 100%;
+	
+		}
+		
+		#title h2 {
+		
+			padding: 10px;
+			margin: 0px;
+			
+		}
+		
+		#title a {
+		
+			padding: 10px;
+			margin: px;
+				
+		}
+		
+	
+		#title a:link {
+		
+			color: #00FFFF;
+			
+		}
+
+		#title a:visited {
+		
+			color: #00FF00;
+			
+		}
+
+		#title a:hover {
+		
+			color: #FFFFFF;
+			
+		}
+
+		.divider {
+	
+			color:white;
+			background-color:#383838;
+			
+			width: 100%;
+	
+		}
+		
+		.divider h4 {
+		
+			padding: 10px;
+			margin: 0px;
+			
+		}
+			
+		.clickOnImageNote h4 {
+		
+			padding: 10px;
+			margin: 0px;
+			color: aqua;
+			
+		}
+
+		.clearFloats {
+	
+			clear: both;
+	
+		}
+		
+		#recentFailedImages div {
+	
+			float:left;
+						
+		}
+		
+		.recentFailedImageSize img {
+		
+			width: 480px;
+			height: 320px;
+		
+		}
+		
+		#largeImages div {
+	
+			float:left;
+						
+		}
+		
+		.largeImageSize img {
+		
+			width: 480px;
+			height: 320px;
+			
+		}
+		
+		#smallImages div {
+	
+			float:left;
+						
+		}
+		
+		.smallImageSize img {
+		
+			width: 100px;
+			height: 75px;
+		
+		}
+				
+		.passingImage {
+			
+			border: 10px solid #009900;
+			padding: 0px;
+			margin: 2px;
+			
+			background-color: #006600;
+			color: white;
+			
+		}
+		
+		.passingImage img {
+			
+			border: 0px;
+			padding: 5px;
+			margin: 2px;
+			
+		}
+		
+		.failingImage {
+			
+			border: 10px solid #FF0000;
+			padding: 0px;
+			margin: 2px;
+			
+			background-color: #990000;
+			color: white;
+			
+		}
+		
+		.failingImage img {
+			
+			border: 0px;
+			padding: 5px;
+			margin: 2px;
+			
+		}
+		
+		.referenceImage {
+			
+			border: 10px solid #0000FF;
+			padding: 0px;
+			margin: 2px;
+			
+			background-color: #000099;
+			color: white;
+			
+		}
+		
+		.referenceImage img {
+			
+			border: 0px;
+			padding: 5px;
+			margin: 2px;
+			
+		}
+		
+		.setupImage {
+			
+			border: 10px solid #0066FF;
+			padding: 0px;
+			margin: 2px;
+			
+			background-color: #006699;
+			color: white;
+			
+		}
+		
+		.setupImage img {
+			
+			border: 0px;
+			padding: 5px;
+			margin: 2px;
+			
+		}
+		
+		.unknownImage {
+			
+			border: 10px solid #FFCC33;
+			padding: 0px;
+			margin: 2px;
+			
+			background-color: #FF6633;
+			color: white;
+			
+		}
+		
+		.unknownImage img {
+			
+			border: 0px;
+			padding: 5px;
+			margin: 2px;
+			
+		}
+		
+		p {
+			
+			padding: 0px;
+			margin: 0px 3px 3px 3px;
+			
+		}
+		
+		.imageLabel {
+			
+			color: #C0C0C0;
+			font-style: italic;
+			font-size: .9em;
+			
+		}
+		
+		.imageLabelData {
+			
+			font-size: 1em;
+			
+		}
+		
+		body {
+			
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 100%;
+			
+		}
+		
+		.catchMyAttention {
+			color: yellow;
+		}
+		
+	
+		

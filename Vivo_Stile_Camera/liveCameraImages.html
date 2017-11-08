@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+ <head>
+
+	<title>Camera Image History - Camera Stream</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Cache-control" content="no-cache" />
+		
+	<script src="jQuery/jquery-2.1.4.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style_index.css" />
+
+ </head>
+
+ <body>
+ 
+	<div id="title">
+	
+		<h2>Camera Image History - Camera Stream</h2>
+		<a href="recentFailingImages.html">View Recent Failed Images</a>
+	
+	</div>
+	
+	<div class="divider clickOnImageNote">
+	
+		<h4>Click on any image to view the image full size in a new browser window.</h4>
+				
+	</div>
+	
+	<div class="clearFloats"></div>
+	
+	<div class="divider">
+	
+		<h4>The most recent image is displayed below:</h4>
+		<h4 class="catchMyAttention">Note: Extra holes or features in a failing image, will not necessarily cause the image to<br />
+			fail.  In some cases this is done intentionally due to punch/gag configurations in order<br />
+			to allow for multiple products to share patterns.  Look for missing holes or features, or images<br />
+			that are out of position.</h4>
+				
+	</div>
+	
+	
+	<div id="largeImages" class="largeImageSize">
+		
+	</div>
+	
+	
+	<div class="clearFloats"></div>
+	
+	
+	<div class="divider">
+	
+		<h4>Image history (displayed oldest to most recent, from left to right on large screens, oldest on top to most recent on the bottom on smaller screens):</h4>
+	
+	</div>
+	
+ 
+	<div id="smallImages" class="smallImageSize">
+	
+	</div>
+ 
+ 
+ 	<div class="clearFloats"></div>
+	
+	
+	<div class="divider">
+	
+		<h4>Page updates images on it's own when the line is running, no need to refresh your broswer...</h4>
+	
+	</div>
+	
+	<div id="backgroundTask">
+	
+	</div>
+	
+	
+
+	<script type="text/javascript">
+		
+		if (window.jQuery) {  
+		
+			// alert ("jQuery is loaded");
+			
+			} else {
+			
+			alert ("jQuery is NOT loaded");
+			
+		}
+		
+		
+		
+		// disable page caching for IE...
+		$.ajaxSetup({
+		
+			cache: false
+	
+		});
+	
+	
+		
+		function loadLastImage() {
+					
+			$.get("_loadLargeImages.php?passedInfo=largeImages", function(data) {
+					
+				if(data!="") {
+						
+					$("#largeImages").html(data).fadeIn();
+					//alert("function returned data");
+					//alert(data);
+					
+					$(".imageFileDescription.largeImages").hide();
+					$(".imageFileDirectory.largeImages").hide();
+																			
+				} else {
+						
+					//alert("PHP loadLastImage returned no data");
+						
+				}
+			
+			});
+			
+		}
+		
+		function loadSmallImages() {
+		
+			$.get("_loadSmallImages.php?passedInfo=smallImages", function(data) {
+					
+				if(data!="") {
+						
+					$("#smallImages").html(data).fadeIn();
+					//alert("function returned data");
+					//alert(data);
+					
+					//$(".imageFileTitle.smallImages").hide();
+					$(".imageLabel.smallImages").hide();
+					$(".imageFileDescription.smallImages").hide();
+					$(".imageFileDirectory.smallImages").hide();
+					$(".imageFileName.smallImages").hide();
+														
+				} else {
+						
+					//alert("PHP loadSmallImages returned no data");
+						
+				}
+			
+			});
+			
+		}
+		
+		function serverWork() {
+					
+			//alert();
+					
+			$.ajax({
+			
+				type: "GET",
+				url: "_serverTaskScheduler.php",
+				success: function(data) {
+					$("#backgroundTask").html(data).fadeIn();
+				},
+				error: function(data) {
+					$("#backgroundTask").html(data).fadeIn();
+				}
+			
+			
+			
+			});
+			
+		}
+		
+		
+		
+		function operate() {
+		
+			serverWork();
+			loadLastImage();
+			loadSmallImages();
+			
+		}
+				
+		operate(); 
+		
+		setInterval(operate, 3000); // time is in seconds
+		
+		
+		
+		function idlePageTimeout() {
+		
+			var t;
+			
+			window.onload = resetTimeout();		// catches the window loading event
+			//window.onmousemove = resetTimer;	// catches mouse movement over browser
+			//window.onmousedown = resetTimer; 	// catches touchscreen presses
+			//window.onclick = resetTimer;     	// catches touchpad clicks
+			//window.onscroll = resetTimer;    	// catches scrolling with arrow keys
+			//window.onkeypress = resetTimer;	// cathces keypresses	
+
+			function executeTimeout() {
+			
+				window.location.href = 'idleNotification.html';
+				
+			}
+
+			function resetTimeout() {
+			
+				//alert("starting timeout");
+				
+				var maxIdleTime = 1000 * 60 * 15; // time is in milliseconds
+				
+				clearTimeout(t);
+				
+				t = setTimeout(executeTimeout, maxIdleTime);  // time is in milliseconds
+			}
+		
+		}
+		
+		idlePageTimeout();
+		
+		
+			
+	</script>
+
+ </body>
+
+</html>
